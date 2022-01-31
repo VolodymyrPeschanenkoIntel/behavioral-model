@@ -573,7 +573,7 @@ MatchKeyBuilder::match_params_sanity_check(
     if (param.type != f_info.mtype) return false;
 
     size_t nbytes = nbits_to_nbytes(f_info.nbits);
-    if (param.key.size() != nbytes) return false;
+    if (param.key.size() > nbytes) return false;
 
     switch (param.type) {
       case MatchKeyParam::Type::VALID:
